@@ -5,9 +5,9 @@ import { UserContext } from '../../UserContext';
 export const ProtectRouter = (props) => {
   const { login } = React.useContext(UserContext);
 
-  if (login === true) {
+  if (login === false) {
+    return <Redirect to="/login" />;
+  } else if (login === true) {
     return <Route {...props} />;
-  } else if (login === false) {
-    return <Redirect to="/login" push />;
   } else return null;
 };

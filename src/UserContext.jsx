@@ -38,16 +38,19 @@ export const UserStorage = ({ children }) => {
     const response = await fetch(url, options);
     const json = await response.json();
     setData(json);
-    setLoading(true);
+    setLogin(true);
   }
-  async function userLogout() {
-    setData(null);
-    setLoading(false);
-    setError(null);
-    setLogin(false);
-    window.localStorage.removeItem('token');
-    history.push('/login');
-  }
+  const userLogout = React.useCallback(
+    async function () {
+      setData(null);
+      setError(null);
+      setLoading(false);
+      setLogin(false);
+      window.localStorage.removeItem('token');
+      history.push('/login');
+    },
+    [history],
+  );
 
   async function userLogin(username, password) {
     try {

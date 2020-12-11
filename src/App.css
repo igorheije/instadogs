@@ -2,12 +2,13 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
+  margin: 0px;
   padding-top: 4rem;
   color: #333;
   --type-first: Helvetica, Arial, sans-serif;
   --type-second: 'Spectral', georgia;
   font-family: var(--type-first);
+  background: #ddd;
 }
 
 h1,
@@ -41,7 +42,7 @@ input {
   margin: 0 auto;
 }
 .mainContainer {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 a {
   text-decoration: none;
@@ -78,4 +79,18 @@ a {
     opacity: 1;
     transform: initial;
   }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1;
+}
+
+.VictoryContainer {
+  height: initial !important;
 }
